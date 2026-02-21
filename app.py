@@ -4,7 +4,6 @@ import plotly.graph_objects as go
 from streamlit_autorefresh import st_autorefresh
 st.set_page_config(layout="wide")
 st_autorefresh(interval=1000, key="refresh")
-
 st.markdown("""
 <style>
 body {background:#0e1117;}
@@ -14,14 +13,11 @@ body {background:#0e1117;}
 .big {font-size:22px;font-weight:bold;}
 </style>
 """, unsafe_allow_html=True)
-
 st.markdown("<h1 style='text-align:center;color:white;'>🚦 SLUTO – Self-Learning Urban Traffic Optimizer (Advanced)</h1>", unsafe_allow_html=True)
-
 # -------------------------
 # TRAFFIC MODE
 # -------------------------
 mode = st.sidebar.selectbox("Traffic Mode", ["Normal", "Rush Hour", "Night Mode"])
-
 def get_arrival(mode):
     if mode == "Normal":
         return np.random.randint(1,4)
@@ -29,7 +25,6 @@ def get_arrival(mode):
         return np.random.randint(3,8)
     if mode == "Night Mode":
         return np.random.randint(0,2)
-
 MAX_CAPACITY = 300
 BASE_GREEN = 6
 SERVICE_BASE = 5
